@@ -22,13 +22,13 @@
 <body>
     <header>
         <nav>
-            <a href="{{ url('/') }}"><img src="favicon.ico" alt="Logo" id=icon></a>
+            <a href="{{ url('/') }}"><img src="{{ asset('favicon.ico') }}" alt="Logo" id=icon></a>
             <ul>
                 <li><a href="{{ url('aboutus ') }}">About Us</a></li>
                 <li><a href="{{ url('contact ') }}">Contact Us</a></li>
             </ul>
         </nav>
-<p class="text-primary">Current Time:{{ now()->format('d-M-y') }}</p>
+<p class="text-primary">Current Time: {{ now()->format('d-M-y') }}</p>
     </header>
     <main>
         @yield('content')
