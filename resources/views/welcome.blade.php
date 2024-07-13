@@ -1,12 +1,26 @@
 @extends('layouts.app')
 
 @section('content')
+@if(session('fail'))
+<script>
+Swal.fire({
+  position: "top-end",
+  icon: "error",
+  title: "Your work has been saved",
+  showConfirmButton: false,
+  timer: 1500
+});
+</script>
+@endif
     <div class="container">
         <h1 class="text-center">Welcome to Our Film Website!</h1>
 
-        <h2 class="text-center">
-            <marquee behavior="alternate" direction="right">Latest Movies And webseries Available:</marquee>
-        </h2>
+        <form action="{{ url('/') }}" method="get" class="d-flex flex-end" style="justify-content: end;">
+            <input type="text" name="name" placeholder="Search" style="width: 20%">
+            &nbsp;&nbsp;<button type="submit" style="border-radius: 5%;"><i class="fa fa-search" aria-hidden="true"></i> Search</button>
+            &nbsp;&nbsp;<a href="{{ url('/') }}" class="btn btn-info" style="text-decoration: none; color: white;" onmouseover="this.style.color='red'" onmouseout="this.style.color='white'">Clear Search</a>
+        </form>
+
         <hr>
 
         <h3 class="text-danger">Webseries</h3>
