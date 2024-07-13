@@ -11,8 +11,9 @@
             <center>
                 <div class="col-lg-4 mb-4">
                     <div class="card">
-                        <img src="{{ 'http://localhost/admovies/public/' . $movie->pic }}" class="card-img-top"
+                        <img src="{{ 'http://tdmovies.rf.gd/public/' . $movie->pic }}" class="card-img-top"
                             alt="{{ $movie->name }} " style="height: 200px; object-fit: cover;">
+
                         <div class="card-body">
                             <h5 class="card-title">{{ $movie->name }}</h5>
                             <p class="card-text">Director: {{ $movie->dirname }}</p>
@@ -36,7 +37,7 @@
             <center>
             <div class="col-lg-4 mb-4">
                 <div class="card">
-                    <img src="{{ 'http://localhost/admovies/public/' . $series->pic }}" class="card-img-top"
+                    <img src="{{ 'http://tdmovies.rf.gd/public/' . $series->pic }}" class="card-img-top"
                         alt="{{ $series->name }}" style="height: 200px; object-fit: cover;">
                     <div class="card-body">
                         <h5 class="card-title">{{ $series->name }}</h5>

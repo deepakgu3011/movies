@@ -15,7 +15,7 @@
                 @if ($movie->category === 'webseries')
                     <div class="col-lg-4 mb-4">
                         <div class="card">
-                            <img src="{{ 'http://localhost/admovies/public/' . $movie->pic }}" class="card-img-top"
+                            <img src="{{ 'http://tdmovies.rf.gd/public/' . $movie->pic }}" class="card-img-top"
                                 alt="{{ $movie->name }}" style="height: 200px; object-fit: cover;">
 
                             <div class="card-body">
@@ -26,7 +26,7 @@
                                     $words = explode(' ', $movie->desc);
                                     $shortDesc = implode(' ', array_slice($words, 0, 10));
                                 @endphp
-                                <p class="card-text">{{ $shortDesc }}</p>
+                                <p class="card-text">{{ $shortDesc }}......</p>
                                 <a href="{{ route('movies',$movie->id) }}" class="btn btn-info">More Information</a>
                             </div>
                         </div>
@@ -43,7 +43,7 @@
                 @if ($movie->category === 'movies')
                     <div class="col-lg-4 mb-4">
                         <div class="card">
-                            <img src="{{ 'http://localhost/admovies/public/' . $movie->pic }}" class="card-img-top"
+                            <img src="{{ 'http://tdmovies.rf.gd/public/' . $movie->pic }}" class="card-img-top"
                                 alt="{{ $movie->name }}">
                             <div class="card-body">
                                 <h5 class="card-title">{{ $movie->name }}</h5>
