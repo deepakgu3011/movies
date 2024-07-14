@@ -6,7 +6,7 @@
 Swal.fire({
   position: "top-end",
   icon: "error",
-  title: "Your work has been saved",
+  title: "Result Not Found!",
   showConfirmButton: false,
   timer: 1500
 });
@@ -14,23 +14,15 @@ Swal.fire({
 @endif
     <div class="container">
         <h1 class="text-center">Welcome to Our Film Website!</h1>
-
-        <form action="{{ url('/') }}" method="get" class="d-flex flex-end" style="justify-content: end;">
-            <input type="text" name="name" placeholder="Search" style="width: 20%">
-            &nbsp;&nbsp;<button type="submit" style="border-radius: 5%;"><i class="fa fa-search" aria-hidden="true"></i> Search</button>
-            &nbsp;&nbsp;<a href="{{ url('/') }}" class="btn btn-info" style="text-decoration: none; color: white;" onmouseover="this.style.color='red'" onmouseout="this.style.color='white'">Clear Search</a>
-        </form>
-
         <hr>
-
-        <h3 class="text-danger">Webseries</h3>
         <div class="row">
             @foreach ($movies as $movie)
                 @if ($movie->category === 'webseries')
+        <h3 class="text-danger">Webseries</h3>
                     <div class="col-lg-4 mb-4">
                         <div class="card">
                             <img src="{{ 'http://tdmovies.rf.gd/public/' . $movie->pic }}" class="card-img-top"
-                                alt="{{ $movie->name }}" style="height: 200px; object-fit: cover;">
+                                alt="{{ $movie->name }}" style="height: 200px; object-fit: cover;" loading="lazy">
 
                             <div class="card-body">
                                 <h5 class="card-title">{{ $movie->name }}</h5>
@@ -51,14 +43,14 @@ Swal.fire({
 
         <hr>
 
-        <h3 class="text-danger">Movies</h3>
         <div class="row">
+               <h3 class="text-danger">Movies</h3>
             @foreach ($movies as $movie)
                 @if ($movie->category === 'movies')
                     <div class="col-lg-4 mb-4">
                         <div class="card">
                             <img src="{{ 'http://tdmovies.rf.gd/public/' . $movie->pic }}" class="card-img-top"
-                                alt="{{ $movie->name }}">
+                                alt="{{ $movie->name }}" style="height: 200px; object-fit: cover;" loading="lazy">
                             <div class="card-body">
                                 <h5 class="card-title">{{ $movie->name }}</h5>
                                 <p class="card-text">Director: {{ $movie->dirname }}</p>
@@ -77,4 +69,15 @@ Swal.fire({
         </div>
 
     </div>
+<script>
+function info(){
+      if (!localStorage.getItem('alertShown')) {
+                Swal.fire("Please Ensure You have Telegram Account!");
+                localStorage.setItem('alertShown', 'true'); // Set a flag in localStorage
+            }
+    }
+    window.onload= function(){
+        info();
+    }
+</script>
 @endsection

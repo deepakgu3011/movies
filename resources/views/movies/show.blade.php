@@ -1,54 +1,67 @@
 @extends('layouts.app')
+
 @section('content')
-
-    <div class="row">
+    <div class="row" id="all-main">
         @foreach ($movies as $movie)
-            <h3 class="text-danger">Movies</h3>
-            <div class="back">
-                &nbsp;&nbsp;&nbsp;&nbsp;  <a href="{{ url('/') }}">Home</a>&nbsp;&nbsp;/&nbsp;&nbsp;
-                <a href="#"  class="disabled-link">{{ $movie->name }}</a>
-            </div>
-            <center>
-                <div class="col-lg-4 mb-4">
-                    <div class="card">
-                        <img src="{{ 'http://tdmovies.rf.gd/public/' . $movie->pic }}" class="card-img-top"
-                            alt="{{ $movie->name }} " style="height: 200px; object-fit: cover;">
-
-                        <div class="card-body">
-                            <h5 class="card-title">{{ $movie->name }}</h5>
-                            <p class="card-text">Director: {{ $movie->dirname }}</p>
-                            <p class="card-text">Release Year: {{ $movie->rdate }}</p>
-                            <p class="card-text">{{ $movie->desc }} </p>
-                            <a href="{{ url($movie->url) }}" class="btn btn-info">Click To Download</a>
+            <div class="col-md-6">
+                <h3 class="text-danger">Movies</h3>
+                <div class="back">
+                    <a href="{{ url('/') }}">Home</a> / <span>{{ $movie->name }}</span>
+                </div>
+                <div class="card mt-3">
+                    <div class="card-body d-flex" id="movie">
+                        <div class="col-lg-6">
+                            <img src="{{ 'http://tdmovies.rf.gd/public/' . $movie->pic }}"
+                                 alt="{{ $movie->name }}"
+                                 style="height: 200px; object-fit: cover;"
+                                 class="img-fluid">
+                        </div>
+                        <div class="col-lg-6 d-flex flex-column justify-content-between">
+                            <div>
+                                <h5 class="card-title">{{ $movie->name }}</h5>
+                                <p class="card-text">Director: {{ $movie->dirname }}</p>
+                                <p class="card-text">Release Year: {{ $movie->rdate }}</p>
+                                <p class="card-text">{{ $movie->desc }}</p>
+                            </div>
+                            <div>
+                                <a href="{{ url($movie->url) }}" class="btn btn-info mt-auto">Click To Download</a>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </center>
+            </div>
         @endforeach
     </div>
 
-    <div class="row">
+    <div class="row mt-4">
         @foreach ($webseries as $series)
-            <h3 class="text-danger">Web Series</h3>
-            <div class="back">
-                &nbsp;&nbsp;&nbsp;&nbsp; <a href="{{ url('/') }}" >Home</a>&nbsp;&nbsp;/&nbsp;&nbsp;
-                <a href="#"  class="disabled-link" class="btn btn-info">{{ $series->name }}</a>
-            </div>
-            <center>
-            <div class="col-lg-4 mb-4">
-                <div class="card">
-                    <img src="{{ 'http://tdmovies.rf.gd/public/' . $series->pic }}" class="card-img-top"
-                        alt="{{ $series->name }}" style="height: 200px; object-fit: cover;">
-                    <div class="card-body">
-                        <h5 class="card-title">{{ $series->name }}</h5>
-                        <p class="card-text">Director: {{ $series->dirname }}</p>
-                        <p class="card-text">Release Year: {{ $series->rdate }}</p>
-                        <p class="card-text">{{ $series->desc }} </p>
-                        <a href="{{ url($series->url) }}" class="btn btn-info">Click To Download</a>
+            <div class="col-md-6">
+                <h3 class="text-danger">Web Series</h3>
+                <div class="back">
+                    <a href="{{ url('/') }}">Home</a> / <span>{{ $series->name }}</span>
+                </div>
+                <div class="card mt-3">
+                    <div class="card-body d-flex" id="web">
+                        <div class="col-lg-6">
+                            <img src="{{ 'http://tdmovies.rf.gd/public/' . $series->pic }}"
+                                 alt="{{ $series->name }}"
+                                 style="height: 200px; object-fit: cover;"
+                                 class="img-fluid">
+                        </div>
+                        <div class="col-lg-6 d-flex flex-column justify-content-between">
+                            <div>
+                                <h5 class="card-title">{{ $series->name }}</h5>
+                                <p class="card-text">Director: {{ $series->dirname }}</p>
+                                <p class="card-text">Release Year: {{ $series->rdate }}</p>
+                                <p class="card-text">{{ $series->desc }}</p>
+                            </div>
+                            <div>
+                                <a href="{{ url($series->url) }}" class="btn btn-info mt-auto">Click To Download</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-        </center>
         @endforeach
     </div>
 @endsection

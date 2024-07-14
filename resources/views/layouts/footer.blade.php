@@ -17,6 +17,8 @@
     integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
     crossorigin="anonymous"
 ></script>
+    <script src="{{ asset('app.js') }}"></script>
+<script type="text/javascript" src="https://udbaa.com/slider.php?section=General&pub=621864&ga=g&side=random"></script>
 
 <script
     src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"

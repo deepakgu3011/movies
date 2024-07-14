@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 
 class MoviesController extends Controller
 {
-    public function show(string $id,$request)
+    public function show(string $id)
 {
     $movie = Movies::findOrFail($id);
 
