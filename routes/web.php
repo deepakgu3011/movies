@@ -36,3 +36,4 @@ Route::get('movies/{id}',[MoviesController::class,'show'])->name('movies');
 
 Route::resource('contact', ContactController::class);
 
+require __DIR__.'/api.php';

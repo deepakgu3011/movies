@@ -74,6 +74,7 @@
         }
         #icon {
             height: 40px;
+            border-radius: 100%;
         }
         nav a {
             color: white;

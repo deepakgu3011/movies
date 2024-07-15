@@ -24,13 +24,14 @@
                                 <p class="card-text">Release Year: {{ $movie->rdate }}</p>
                                 <p class="card-text">{{ $movie->desc }}</p>
                             </div>
-                            {{-- @dd($movie->movieurl/) --}}
                             <div>
-                                @foreach ($movie->movieurl as $movieurl)
-
-                                <a href="{{ url($movieurl->url) }}" class="btn btn-info " style="margin: 1.2rem;">Click To Download &nbsp;&nbsp;({{ $movieurl->file_size }})</a>
-                                @endforeach
-
+                                @if($movie->movieurl->isEmpty())
+                                    <a href="{{ url($movie->url) }}" class="btn btn-info">Download</a>
+                                @else
+                                    @foreach ($movie->movieurl as $movieurl)
+                                        <a href="{{ url($movieurl->url) }}" class="btn btn-info" style="margin: 1.2rem;">Click To Download &nbsp;&nbsp;({{ $movieurl->file_size }})</a>
+                                    @endforeach
+                                @endif
                             </div>
                         </div>
                     </div>
@@ -62,14 +63,13 @@
                                 <p class="card-text">{{ $series->desc }}</p>
                             </div>
                             <div>
-                                {{-- <a href="{{ url($series->url) }}" class="btn btn-info mt-auto">Click To Download</a> --}}
-                                <div>
+                               @if($series->movieurl->isEmpty())
+                                    <a href="{{ url($series->url) }}" class="btn btn-info">Download</a>
+                                @else
                                     @foreach ($series->movieurl as $movieurl)
-
-                                    <a href="{{ url($movieurl->url) }}" class="btn btn-info " style="margin: 1.2rem;">Click To Download &nbsp;&nbsp;({{ $movieurl->file_size }})</a>
+                                        <a href="{{ url($movieurl->url) }}" class="btn btn-info" style="margin: 1.2rem;">Click To Download &nbsp;&nbsp;({{ $movieurl->file_size }})</a>
                                     @endforeach
-
-                                </div>
+                                @endif
                             </div>
                         </div>
                     </div>

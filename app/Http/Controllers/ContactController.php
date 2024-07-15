@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Contact;
+use App\Models\Movies;
+
+
 use Illuminate\Http\Request;
 
 class ContactController extends Controller
@@ -43,6 +46,13 @@ class ContactController extends Controller
     public function show(string $id)
     {
         //
+    }
+    
+    public function movi(){
+        $data = Movies::get();
+
+   
+    return response()->json($data);
     }
 
     /**

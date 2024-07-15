@@ -28,7 +28,7 @@
 <body>
     <header>
         <nav id="nav">
-            <a href="{{ url('/') }}"><img src="{{ asset('favicon.ico') }}" alt="Logo" id=icon></a>
+            <a href="{{ url('/') }}"><img src="{{ asset('favicon.ico') }}" alt="Logo" id="icon"></a>
             <ul id="navs">
                 <li><a href="{{ url('aboutus ') }}">About Us</a></li>
                 <li><a href="{{ url('contact ') }}">Contact Us</a></li>
