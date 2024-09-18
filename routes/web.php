@@ -4,6 +4,7 @@ use App\Models\Movies;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\MoviesController;
+use App\Http\Controllers\SitemapController;
 use Illuminate\Http\Request;
 
 // Route::get('/', function () {
@@ -12,14 +13,17 @@ use Illuminate\Http\Request;
 // });
 
 Route::get('/', function (Request $request) {
+    $query = Movies::where('status', 'active');
+
     if ($request->has('name')) {
         $name = $request->input('name');
-        $movies = Movies::where('name', '=', $name)->paginate(10);
-         if ($movies->isempty()) {
-           return redirect()->back()->with('fail','No Result Found!');
-        }
-    } else {
-        $movies = Movies::paginate(10);
+        $query->where('name', '=', $name);
+    }
+
+    $movies = $query->paginate(10);
+
+    if ($movies->isEmpty() && $request->has('name')) {
+        return redirect()->back()->with('fail', 'No Result Found!');
     }
 
     return view('welcome', compact('movies'));
@@ -35,5 +39,8 @@ Route::get('policy', function () {
 Route::get('movies/{id}',[MoviesController::class,'show'])->name('movies');
 
 Route::resource('contact', ContactController::class);
+
+Route::get('sitemap',[SitemapController::class,'index'])->name('index');
+
 
 require __DIR__.'/api.php';

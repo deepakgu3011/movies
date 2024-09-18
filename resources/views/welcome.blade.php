@@ -22,7 +22,7 @@ Swal.fire({
                     <div class="col-lg-4 mb-4">
                         <div class="card">
                             <img src="{{ 'http://tdmovies.rf.gd/public/' . $movie->pic }}" class="card-img-top"
-                                alt="{{ $movie->name }}" style="height: 200px; object-fit: cover;" loading="lazy">
+                                alt="{{ $movie->name }}" style="height: 200px; object-fit: cover;" >
 
                             <div class="card-body">
                                 <h5 class="card-title">{{ $movie->name }}</h5>
@@ -50,7 +50,7 @@ Swal.fire({
                     <div class="col-lg-4 mb-4">
                         <div class="card">
                             <img src="{{ 'http://tdmovies.rf.gd/public/' . $movie->pic }}" class="card-img-top"
-                                alt="{{ $movie->name }}" style="height: 200px; object-fit: cover;" loading="lazy">
+                                alt="{{ $movie->name }}" style="height: 200px; object-fit: cover;" >
                             <div class="card-body">
                                 <h5 class="card-title">{{ $movie->name }}</h5>
                                 <p class="card-text">Director: {{ $movie->dirname }}</p>
@@ -73,7 +73,7 @@ Swal.fire({
 function info(){
       if (!localStorage.getItem('alertShown')) {
                 Swal.fire("Please Ensure You have Telegram Account!");
-                localStorage.setItem('alertShown', 'true'); // Set a flag in localStorage
+                localStorage.setItem('alertShown', 'true');
             }
     }
     window.onload= function(){

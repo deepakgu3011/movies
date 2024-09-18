@@ -6,6 +6,10 @@
     <!-- Required meta tags -->
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+    <meta name="google-site-verification" content="r3Bdu0Td_e-yJ7g8HQidTiVYt2aM_OVVJtwTRviXBfY" />
+    <meta name="keywords" content="movies,latest movies,websersies ,bhojpuri movies">
+
 
     <!-- Bootstrap CSS v5.2.1 -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -20,7 +24,8 @@
     integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="dns-prefetch" href="//tdmovies.rf.gd">    
-    <link rel="preload" href="http://tdmovies.rf.gd/public/" as="image">
+  <link rel="preconnect" href="https://tdmovies.rf.gd/public/">
+
 
 
 </head>

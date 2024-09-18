@@ -9,7 +9,7 @@ class MoviesController extends Controller
 {
     public function show(string $id)
 {
-    $movie = Movies::with('movieurl')->findOrFail($id);
+    $movie = Movies::with('movieurl')->where('status','active')->findOrFail($id);
 
     // Initialize empty collections
     $data['movies'] = collect();

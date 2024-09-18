@@ -2,8 +2,8 @@
     <p>&copy; 2024 FilmiDuniya. All rights reserved.</p>
     <ul class="footer-links">
         <li><a href="{{ url('policy') }}">Privacy Policy</a></li>
-        <!-- <li><a routerLink="/term" routerLinkActive="active">Terms of Service</a></li> -->
         <li><a href="{{ url('contact') }}">Contact Us</a></li>
+        <li><a href="{{url('sitemap')}}">Sitemap</a></li>
         <li><p class="text-info">Last Update: {{ \Carbon\Carbon::yesterday()->format('Y-M-d') }}</p>
         </li>
     </ul>
